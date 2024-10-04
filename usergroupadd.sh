@@ -4,7 +4,8 @@
 
 username="$1"
 
-sudo addgroup docker
+sudo -i
+addgroup docker
 chgrp docker /var/run/docker.sock
 newgrp docker
 usermod -aG docker "$username"
