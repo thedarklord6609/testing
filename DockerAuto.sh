@@ -1,6 +1,6 @@
 #!/bin/bash
 
-username ="$1"
+username="$1"
 
 apt update -y
 addgroup docker
