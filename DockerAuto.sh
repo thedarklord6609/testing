@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Run as "sudo bash DockerAuto.sh [username]
+
 username="$1"
 
 apt update -y
