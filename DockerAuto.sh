@@ -1,9 +1,9 @@
 #!/bin/bash
 
-sudo apt update -y
-sudo addgroup docker
-sudo chgrp docker /var/run/docker.sock
-sudo usermod -aG docker "$whoami"
+apt update -y
+addgroup docker
+chgrp docker /var/run/docker.sock
+usermod -aG docker "$whoami"
 
 mkdir minecraft
 cd minecraft
