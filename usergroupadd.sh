@@ -2,6 +2,8 @@
 
 # Uses admin permissions to create the docker group and add the user to it
 
+
+chmod +x groupuser.sh
 username="$1"
 sudo -i
 cd /home/"$username"
