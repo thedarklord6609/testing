@@ -5,7 +5,7 @@ username="$1"
 apt update -y
 addgroup docker
 chgrp docker /var/run/docker.sock
-usermod -aG docker "$username"
+usermod -aG docker "$1"
 newgrp docker
 
 mkdir minecraft
