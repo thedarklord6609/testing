@@ -5,7 +5,7 @@
 
 chmod +x groupuser.sh
 username="$1"
-sudo -i
+
 cd /home/"$username"
 groupadd docker
 chgrp docker /var/run/docker.sock
