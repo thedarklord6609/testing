@@ -4,7 +4,9 @@
 
 username="$1"
 sudo -i
+cd /home/"$username"
 groupadd docker
 chgrp docker /var/run/docker.sock
 newgrp docker
 usermod -aG docker "$username"
+logout
