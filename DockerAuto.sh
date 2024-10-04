@@ -1,12 +1,9 @@
 #!/bin/bash
 
-username="$1"
-
 sudo apt update -y
-sudo -i
 sudo addgroup docker
 sudo chgrp docker /var/run/docker.sock
-sudo usermod -aG docker "$username"
+sudo usermod -aG docker "$whoami"
 
 mkdir minecraft
 cd minecraft
