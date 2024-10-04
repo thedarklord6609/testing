@@ -4,10 +4,9 @@ username="$1"
 
 sudo apt update -y
 sudo -i
-addgroup docker
-chgrp docker /var/run/docker.sock
-usermod -aG docker "$username"
-newgrp docker
+sudo addgroup docker
+sudo chgrp docker /var/run/docker.sock
+sudo usermod -aG docker "$username"
 
 mkdir minecraft
 cd minecraft
