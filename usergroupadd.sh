@@ -11,4 +11,4 @@ groupadd docker
 chgrp docker /var/run/docker.sock
 newgrp docker
 usermod -aG docker "$username"
-logout
+exit
