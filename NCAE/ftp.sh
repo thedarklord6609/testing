@@ -35,10 +35,18 @@ sudo chmod 664 /mnt/files/*
 sudo find /mnt/files/ -type d -exec chmod 755 {} \;
 sudo find /mnt/files/ -type f -exec chmod 644 {} \;
 
-# Step 3: Restart vsftpd service
+# Step 3: Remove the ability to set executable permissions on files in /mnt/files
+# This step removes execute permissions for everyone, including future files.
+echo "Restricting file creation to prevent executable files..."
+
+# Apply the umask (to disallow execute permissions on new files)
+# Set default umask to 0022, which prevents executable files for new files.
+echo "umask 0022" | sudo tee -a /etc/profile
+
+# Step 4: Restart vsftpd service
 echo "Restarting vsftpd service..."
 sudo systemctl restart vsftpd
 
-# Step 4: Verify the setup
+# Step 5: Verify the setup
 echo "Configuration complete. Verifying the FTP setup..."
 sudo systemctl status vsftpd
