@@ -1,0 +1,28 @@
+1. security:
+  run ssh.sh          (hardens ssh by disabling insecure features)
+  run ftp.sh          (sets the given users to a scoringusers group and heavily limits perms)
+  run ftpfiles.sh    (ftpfilesREVERT.sh if it messes up scoring)
+  nobrute.sh
+    
+2. monitoring
+  run sshmonitor.sh      (detects active ssh testions)
+  additionally sshmonitor2.sh and the two testmonitors    (test modifications of the above)
+  users.sh    (prints out list of users not in scoringusers group)
+  sshdetect.sh    (prints failed login attempts)
+  sshtest and its revert if scoring fucks up   (ssh hardening from sshaudit.com)
+  check.sh (chatgpt script to detect sus stuff, 50/50 it does jack shit)  
+  checkusers.sh (checks for users outside of the scoringusers list, duplicates in the list, and that sort of stuff)
+  
+3. misc
+teto1 and teto2.sh    (silly pictures, thats it lol)
+silly.sh      (root only important directory with encryption, honeypot)
+sillyssh.sh    (replaces failed ssh login with some random bs error lmao)
+    
+4. 
+  backup.sh      (backsup files)
+  restore.sh      (restores files)
+
+5. 
+  only needed if ftp service is normal ftp and not secure ! ( i mean, what they do is in the name...)
+  ftpTOftps
+  ftpsTOftp
