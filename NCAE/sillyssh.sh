@@ -7,7 +7,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Set the banner message
-BANNER_MESSAGE="Server refused to allocate pty"
+BANNER_MESSAGE="Could not resolve hostname 172.18.14.3: Host does not exist"
 
 # Define the path to the banner file
 BANNER_FILE="/etc/ssh/sshd_banner.txt"
