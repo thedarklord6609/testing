@@ -1,3 +1,0 @@
-cat /var/log/btmp
-cat /var/log/secure
-sudo nano /etc/host.deny
