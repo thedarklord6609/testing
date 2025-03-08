@@ -37,10 +37,10 @@ sudo chmod 664 /mnt/files/*
 sudo find /mnt/files/ -type d -exec chmod 755 {} \;
 sudo find /mnt/files/ -type f -exec chmod 644 {} \;
 
-# Step 4: Restrict file creation to prevent executables in /mnt/files
+# Step 4: Prevent files from being executable in /mnt/files
 echo "Preventing executable files in /mnt/files..."
-# Set default umask to prevent executables from being created
-echo "umask 0022" | sudo tee -a /etc/profile
+# Apply a stricter umask for new files (ensure no executable permissions by default)
+echo "umask 022" | sudo tee -a /etc/profile
 
 # Step 5: Restart vsftpd service
 echo "Restarting vsftpd service..."
