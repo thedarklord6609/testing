@@ -12,6 +12,8 @@
   sshtest and its revert if scoring fucks up   (ssh hardening from sshaudit.com)
   check.sh (chatgpt script to detect sus stuff, 50/50 it does jack shit)  
   checkusers.sh (checks for users outside of the scoringusers list, duplicates in the list, and that sort of stuff)
+
+  audit.sh (internal system audit log, download seperately from files.sh)
   
 3. misc
 teto1 and teto2.sh    (silly pictures, thats it lol)
