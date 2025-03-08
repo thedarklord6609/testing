@@ -2,7 +2,7 @@
   run ssh.sh          (hardens ssh by disabling insecure features)
   run ftp.sh          (sets the given users to a scoringusers group and heavily limits perms)
   run ftpfiles.sh    (ftpfilesREVERT.sh if it messes up scoring)
-  nobrute.sh
+  nobrute.sh        (firewall rules to limit 10 connections per 10s)
     
 2. monitoring
   run sshmonitor.sh      (detects active ssh testions)
