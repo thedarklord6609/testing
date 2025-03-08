@@ -1,0 +1,4 @@
+sudo passwd root
+sudo useradd -m -s /bin/bash KasaneTeto && sudo usermod -aG sudo KasaneTeto
+sudo passwd KasaneTeto
+sudo usermod -L root
