@@ -29,6 +29,7 @@ FILES=(
     "teto2.sh"
     "users.sh"
     "add.sh"
+    "deluser.sh"
 )
 
 # Loop through each file and download it using wget
