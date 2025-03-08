@@ -74,6 +74,8 @@ cleanup() {
 }
 trap cleanup SIGINT SIGTERM
 
+exec 3< "$FIFO"
+
 # Main loop: update the session list and check for user input.
 while true; do
   # Read any new log lines (with a short timeout) from the FIFO.
