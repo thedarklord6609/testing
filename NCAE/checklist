@@ -7,5 +7,7 @@ sudo dnf remove -y python3 cronie
 
 sudo chmod -R o-rwx /etc /root /bin /sbin /usr /var/log
 sudo setsebool -P ftpd_disable_trans 1
+echo -e "anonymous_enable=NO\nlocal_enable=YES\nwrite_enable=YES" | sudo tee -a /etc/vsftpd/vsftpd.conf
+
 
 lastlog | grep -v "Never logged in"
