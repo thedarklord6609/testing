@@ -12,16 +12,12 @@ sudo apt-get install -y vsftpd acl nano
 echo "Disabling anonymous FTP login..."
 sudo sed -i 's/^anonymous_enable=YES/anonymous_enable=NO/' /etc/vsftpd/vsftpd.conf
 
-# Step 3: Create scoringusers group and add users
+# Step 3: Create scoringusers group (if not already created) and add users to the group
 echo "Creating scoringusers group and adding users..."
-sudo groupadd scoringusers
+sudo groupadd -f scoringusers
 for user in "${users[@]}"; do
-    # Create user without home directory and with no login shell
-    sudo useradd -m -s /bin/bash -G scoringusers $user
-    # Set a default password for the users (change it as needed)
-    echo "$user:password" | sudo chpasswd
-    # Remove any other groups the user might be in
-    sudo usermod -G scoringusers $user
+    # Add user to the scoringusers group
+    sudo usermod -aG scoringusers $user
 done
 
 # Step 4: Set up /mnt/files and its permissions
@@ -59,7 +55,7 @@ echo "anonymous_enable=NO" | sudo tee -a /etc/vsftpd/vsftpd.conf
 echo "Restarting vsftpd..."
 sudo systemctl restart vsftpd
 
-# Step 8: Ensure users can modify, create, touch, nano, ls in /mnt/files
+# Step 8: Ensure users can modify, create, touch, use nano, and ls in /mnt/files
 echo "Ensuring users can modify, create, touch, use nano, and ls in /mnt/files..."
 # Grant read, write, and execute permissions on /mnt/files (only for the users)
 sudo chmod 770 /mnt/files
