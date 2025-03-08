@@ -10,5 +10,4 @@ sudo setsebool -P ftpd_disable_trans 1
 echo -e "anonymous_enable=NO\nlocal_enable=YES\nwrite_enable=YES" | sudo tee -a /etc/vsftpd/vsftpd.conf
 run ftp.sh
 
-
 lastlog | grep -v "Never logged in"
