@@ -1,10 +1,10 @@
-// FTP Login
+# FTP Login
 grep -E 'camille_jenatzy|gaston_chasseloup|leon_serpollet|william_vanderbilt|henri_fournier|maurice_augieres|arthur_duray|henry_ford|louis_rigolly|pierre_caters|paul_baras|victor_hemery|fred_marriott|lydston_hornsted|kenelm_guinness|rene_thomas|ernest_eldridge|malcolm_campbell|ray_keech|john_cobb|dorothy_levitt|paula_murphy|betty_skelton|rachel_kushner|kitty_oneil|jessi_combs|andy_green' /etc/passwd
-// Lists any users aside from the standard FTP accounts
+# Lists any users aside from the standard FTP accounts
 
-// FTP READ
+# FTP READ
 sudo chmod -R o+r /mnt/files/*
 sudo chmod -R o-wx /mnt/files/*
 
 sudo chmod -R o-x /mnt/files/ 
-// removes all execution perms from the folder
+# removes all execution perms from the folder
